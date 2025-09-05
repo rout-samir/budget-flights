@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetFlights - Find Cheap Flights</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>BudgetFlights</h1>
+        <p>Your one-stop shop for the cheapest flights</p>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <div class="api-warning">
+                <strong>API Configuration Required</strong>
+                To use this flight search, you need to replace the API key in the JavaScript code with your own SerpAPI key.
+            </div>
+            
+            <h2>Search for Flights</h2>
+            <form id="search-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="departure">Departure</label>
+                        <input type="text" id="departure" placeholder="e.g., JFK, LAX, NYC" required>
+                        <small>Enter airport code or city name</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="arrival">Arrival</label>
+                        <input type="text" id="arrival" placeholder="e.g., LHR, CDG, LON" required>
+                        <small>Enter airport code or city name</small>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="departure-date">Departure Date</label>
+                        <input type="date" id="departure-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="return-date">Return Date (Optional)</label>
+                        <input type="date" id="return-date">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="passengers">Passengers</label>
+                        <input type="number" id="passengers" min="1" max="9" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cabin-class">Cabin Class</label>
+                        <select id="cabin-class">
+                            <option value="economy">Economy</option>
+                            <option value="premium-economy">Premium Economy</option>
+                            <option value="business">Business</option>
+                            <option value="first">First</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit">Search Flights</button>
+                
+            </form>
+        </section>
+
+        <section class="results-section">
+            <div class="results-header">
+                <h2>Flight Results</h2>
+                <div class="sort-filter-options">
+                    <div class="form-group">
+                        <label for="sort-by">Sort by</label>
+                        <select id="sort-by">
+                            <option value="price">Price (Low to High)</option>
+                            <option value="duration">Duration (Shortest)</option>
+                            <option value="departure-time">Departure Time</option>
+                            <option value="arrival-time">Arrival Time</option>
+                        </select>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="filter-nonstop">
+                        <label for="filter-nonstop">Nonstop flights only</label>
+                    </div>
+                </div>
+            </div>
+            <div id="results-container">
+                <!-- Flight results will be injected here by JavaScript -->
+            </div>
+            <div id="loading-indicator" class="hidden">
+                <div class="spinner"></div>
+                <p>Searching for the best flights...</p>
+            </div>
+            <div id="error-message" class="hidden">
+                <p>Sorry, we couldn't find any flights. Please check your search criteria and try again.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BudgetFlights</h3>
+                <p>Advanced AI-powered flight search technology for modern travelers. Find the best deals, compare prices across airlines, and book with confidence.</p>
+                <div class="social-links">
+                    <a href="https://github.com/rout-samir" target="_blank" title="GitHub">GH</a>
+                    <a href="https://www.linkedin.com/in/samir-rout-92ba192ab/" target="_blank" title="LinkedIn">LI</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#search">Flight Search</a></li>
+                    <li><a href="#deals">Best Deals</a></li>
+                    <li><a href="#destinations">Popular Destinations</a></li>
+                    <li><a href="#help">Help Center</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#booking">Flight Booking</a></li>
+                    <li><a href="#price-alerts">Price Alerts</a></li>
+                    <li><a href="#travel-insurance">Travel Insurance</a></li>
+                    <li><a href="#mobile-app">Mobile App</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#cancellation">Cancellation Policy</a></li>
+                    <li><a href="#refunds">Refunds</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p><strong>Developer: Samir Rout</strong></p>
+            <p>© 2025 <strong>BUDGET FLIGHTS</strong>. All rights reserved.</p>
+            <p>Crafted with ❤️ by Samir Rout</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#api">API Docs</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
